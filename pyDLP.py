@@ -122,7 +122,7 @@ def main():
     for i in xrange(10**9):
         k = randint(2, p)
         c = is_Bsmooth(B, (h * pow(euclid_modinv(g,p),k)) % p)
-        if c[0]: print) 'found k = {}').format(k) ; break
+        if c[0]: print( 'found k = {}').format(k) ; break
 
     print( 'Solving the main dlog problem:\n')
     soln = (evaluate(factorlist_to_explist(c[1]), dlogs) + k) % (p-1)
