@@ -85,7 +85,7 @@ def evaluate(eq, dlogs):
     return sum([dlogs[term] * exp for term, exp in eq.iteritems()]) % (p-1)
 
 def check_congruences(congruences, dlogs):
-    print 'checking congruences:',; passed = True 
+    print( 'checking congruences:'),; passed = True 
     for c in congruences:
         if evaluate(c[0], dlogs) != c[1]: passed = False
     if passed: print 'Passed!\n'
