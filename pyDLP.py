@@ -60,7 +60,7 @@ def find_congruences(congruences=[], bases=[]):
             congruences.append((factorlist_to_explist(_[1]),k))                    
             bases = unique([base for c in [c[0].keys() for c in congruences] for base in c])
             if len(congruences) >= max_equations: break
-    print'congruences: {}\nbases: {}'.format(len(congruences), len(bases))
+    print( 'congruences: {}\nbases: {}').format(len(congruences), len(bases))
     return bases, congruences
 
 # convert the linear system  to dense matrices 
