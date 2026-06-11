@@ -104,7 +104,7 @@ def check_dlogs(exponents, bases):
 def main():
     # generate and solve congruences:
     print( 'p: {}, g: {}, h: {}, B: {}').format(p,g,h,B)
-    print) 'searching for congruences.')
+    print( 'searching for congruences.')
     bases, congruences = find_congruences()
     print( 'converting to matrix format.')
     M, b = to_matrices(bases, congruences)
