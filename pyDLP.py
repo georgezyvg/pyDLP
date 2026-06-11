@@ -1,5 +1,4 @@
 #!/usr/bin/python2.7
-import commands
 from random import randint
 from ast import literal_eval
 from primefac import primefac
