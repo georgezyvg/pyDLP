@@ -93,12 +93,12 @@ def check_congruences(congruences, dlogs):
     return passed
 
 def check_dlogs(exponents, bases):
-    print 'checking dlog exponents:'; passed = True 
+    print( 'checking dlog exponents:'); passed = True 
     for exponent, base in zip(exponents, bases):
         if pow(g, exponent, p) != base: passed = False
         else: print '{}^{} = {} (mod {})'.format(g,exponent, base, p)
-    if passed: print 'Passed!\n'
-    else: print 'Failed, try running again.'; exit()
+    if passed: print( 'Passed!\n')
+    else: print( 'Failed, try running again.'); exit()
     return passed
 
 def main():
@@ -106,11 +106,11 @@ def main():
     print 'p: {}, g: {}, h: {}, B: {}'.format(p,g,h,B)
     print 'searching for congruences.'
     bases, congruences = find_congruences()
-    print 'converting to matrix format.'
+    print( 'converting to matrix format.')
     M, b = to_matrices(bases, congruences)
-    print 'solving linear system with sage:'
+    print( 'solving linear system with sage:')
     exponents = msolve(M,b)
-    print 'sage done.'
+    print( 'sage done.')
 
     # dictionary of bases and exponents
     dlogs = {b : exp for (b,exp) in zip(bases, exponents)}
@@ -118,17 +118,17 @@ def main():
     # verify our results:
     check_congruences(congruences, dlogs); check_dlogs(exponents, bases)
 
-    print 'searching for k such that h*g^-k is B-smooth.'
+    print) 'searching for k such that h*g^-k is B-smooth.')
     for i in xrange(10**9):
         k = randint(2, p)
         c = is_Bsmooth(B, (h * pow(euclid_modinv(g,p),k)) % p)
-        if c[0]: print 'found k = {}'.format(k) ; break
+        if c[0]: print) 'found k = {}').format(k) ; break
 
-    print 'Solving the main dlog problem:\n'
+    print) 'Solving the main dlog problem:\n')
     soln = (evaluate(factorlist_to_explist(c[1]), dlogs) + k) % (p-1)
     if pow(g,soln,p) == h: 
-        print '{}^{} = {} (mod {}) holds!'.format(g,soln,h,p)
+        print) '{}^{} = {} (mod {}) holds!').format(g,soln,h,p)
         print 'DLP solution: {}'.format(soln)
-    else: print 'Failed.'
+    else: print( 'Failed.')
 
 if __name__ == '__main__': main()
