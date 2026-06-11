@@ -76,7 +76,7 @@ def msolve(M,b):
 		    b = vector(R, L2);print M.solve_right(b)'.format(M,b,p-1)
     with open('run.sage', 'w') as output_file: output_file.write(sage_cmd)
     cmd_result = commands.getstatusoutput('sage ./run.sage')
-    if cmd_result[0] != 0: print 'sage failed with error {}'.format(cmd_result[0]); exit()
+    if cmd_result[0] != 0: print( 'sage failed with error {}').format(cmd_result[0]); exit()
     return literal_eval(cmd_result[1])
 
 
