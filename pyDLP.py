@@ -96,15 +96,15 @@ def check_dlogs(exponents, bases):
     print( 'checking dlog exponents:'); passed = True 
     for exponent, base in zip(exponents, bases):
         if pow(g, exponent, p) != base: passed = False
-        else: print '{}^{} = {} (mod {})'.format(g,exponent, base, p)
+        else: print( '{}^{} = {} (mod {})').format(g,exponent, base, p)
     if passed: print( 'Passed!\n')
     else: print( 'Failed, try running again.'); exit()
     return passed
 
 def main():
     # generate and solve congruences:
-    print 'p: {}, g: {}, h: {}, B: {}'.format(p,g,h,B)
-    print 'searching for congruences.'
+    print( 'p: {}, g: {}, h: {}, B: {}').format(p,g,h,B)
+    print) 'searching for congruences.')
     bases, congruences = find_congruences()
     print( 'converting to matrix format.')
     M, b = to_matrices(bases, congruences)
