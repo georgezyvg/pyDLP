@@ -128,7 +128,7 @@ def main():
     soln = (evaluate(factorlist_to_explist(c[1]), dlogs) + k) % (p-1)
     if pow(g,soln,p) == h: 
         print( '{}^{} = {} (mod {}) holds!').format(g,soln,h,p)
-        print 'DLP solution: {}'.format(soln)
+        print( 'DLP solution: {}').format(soln)
     else: print( 'Failed.')
 
 if __name__ == '__main__': main()
