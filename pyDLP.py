@@ -118,16 +118,16 @@ def main():
     # verify our results:
     check_congruences(congruences, dlogs); check_dlogs(exponents, bases)
 
-    print) 'searching for k such that h*g^-k is B-smooth.')
+    print( 'searching for k such that h*g^-k is B-smooth.')
     for i in xrange(10**9):
         k = randint(2, p)
         c = is_Bsmooth(B, (h * pow(euclid_modinv(g,p),k)) % p)
         if c[0]: print) 'found k = {}').format(k) ; break
 
-    print) 'Solving the main dlog problem:\n')
+    print( 'Solving the main dlog problem:\n')
     soln = (evaluate(factorlist_to_explist(c[1]), dlogs) + k) % (p-1)
     if pow(g,soln,p) == h: 
-        print) '{}^{} = {} (mod {}) holds!').format(g,soln,h,p)
+        print( '{}^{} = {} (mod {}) holds!').format(g,soln,h,p)
         print 'DLP solution: {}'.format(soln)
     else: print( 'Failed.')
 
