@@ -89,7 +89,7 @@ def check_congruences(congruences, dlogs):
     for c in congruences:
         if evaluate(c[0], dlogs) != c[1]: passed = False
     if passed: print( 'Passed!\n')
-    else: print 'Failed, try running again?'; exit()
+    else: print( 'Failed, try running again?'); exit()
     return passed
 
 def check_dlogs(exponents, bases):
